@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.1-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap-5.3.1-dist/js/bootstrap.min.js" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      #wrap {
+        margin: 20px;
+      }
+
+      .button {
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div class="button">
+        <button
+          id="buttonAsc"
+          type="button"
+          onclick="sortAscending()"
+          class="btn btn-primary"
+        >
+          Short By Ascending
+        </button>
+        <button
+          id="buttonDsc"
+          type="button"
+          onclick="sortDescending()"
+          class="btn btn-primary"
+        >
+          Short By Descending
+        </button>
+      </div>
+      <div class="input-group mb-3">
+        <input
+          id="inputSearch"
+          type="text"
+          class="form-control"
+          placeholder="search here..."
+        />
+
+        <button type="button" class="btn btn-primary" onclick="searchingItem()">
+          search
+        </button>
+      </div>
+    </div>
+
+    <!-- button button primary input group (bootstrap) -->
+
+    <script>
+      // Array
+      const arrayOfNames = ["Bryan", "Axel", "Daniel", "Chelsea", "Ethan"];
+
+      //   Acending
+      function sortAscending() {
+        const ascArr = arrayOfNames.sort();
+        console.log("Sorted Name Ascending", ascArr);
+      }
+
+      //   Descending
+
+      function sortDescending() {
+        const descArr = arrayOfNames.sort().reverse();
+        console.log("Sorted Name Descending", descArr);
+      }
+
+      //   Searching
+
+      function searchingItem() {
+        const searchInput = document.getElementById("inputSearch").value;
+        const result = arrayOfNames.includes(searchInput);
+
+        if (result) {
+          console.log("Data ada");
+        } else {
+          console.log("Data tidak ada");
+        }
+
+        // console.log("Search Result ==>", result);
+
+
+      }
+
+     
+    </script>
+  </body>
+</html>
